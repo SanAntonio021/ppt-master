@@ -26,12 +26,12 @@ See references/executor-base.md §4 and templates/icons/README.md.
 from __future__ import annotations
 
 import argparse
-import shutil
 import sys
 from pathlib import Path
 from typing import Optional
 
 from console_encoding import configure_utf8_stdio
+from icon_store import IconIntegrityError, IconStore, IconStoreIOError
 
 configure_utf8_stdio()
 
@@ -42,7 +42,7 @@ _STYLISTIC_LIBRARIES = {
     "tabler-outline",
 }
 _SYNC_LIBRARIES = _STYLISTIC_LIBRARIES | {"simple-icons"}
-_GLOBAL_ICONS_DIR = Path(__file__).resolve().parent.parent / "templates" / "icons"
+_ICON_SEARCH_SCRIPT = Path(__file__).resolve().parent / "icon_search.py"
 
 
 def _split_name(icon_name: str) -> tuple[str, str]:
@@ -65,23 +65,30 @@ def _split_name(icon_name: str) -> tuple[str, str]:
     return lib, name
 
 
-def sync_icons(project_path: Path, icon_names: list[str], global_dir: Path = _GLOBAL_ICONS_DIR) -> tuple[list[str], list[str]]:
+def sync_icons(
+    project_path: Path,
+    icon_names: list[str],
+    *,
+    store: IconStore | None = None,
+) -> tuple[list[str], list[str]]:
     """Copy each `lib/name` from the global library into `<project>/icons/`.
 
     Returns (copied, missing). A name already present in the project (e.g. a
     custom icon) counts as satisfied, not missing.
     """
+    active_store = store or IconStore()
     project_icons = project_path / "icons"
     copied: list[str] = []
     missing: list[str] = []
+    parsed = [(*_split_name(raw), raw) for raw in icon_names]
+    payloads = active_store.read_icons([raw for _lib, _name, raw in parsed])
 
-    for raw in icon_names:
-        lib, name = _split_name(raw)
-        src = global_dir / lib / f"{name}.svg"
+    for lib, name, raw in parsed:
         dst = project_icons / lib / f"{name}.svg"
-        if src.is_file():
+        payload = payloads.get(raw)
+        if payload is not None:
             dst.parent.mkdir(parents=True, exist_ok=True)
-            shutil.copy2(src, dst)
+            dst.write_bytes(payload)
             copied.append(f"{lib}/{name}")
         elif dst.is_file():
             copied.append(f"{lib}/{name} (already in project)")
@@ -126,7 +133,15 @@ def main(argv: Optional[list[str]] = None) -> int:
         )
         return 1
 
-    copied, missing = sync_icons(project, args.icons)
+    try:
+        store = IconStore()
+        copied, missing = sync_icons(project, args.icons, store=store)
+    except IconIntegrityError as exc:
+        print(f"[ERROR] icon store integrity failure: {exc}", file=sys.stderr)
+        return 1
+    except (IconStoreIOError, OSError) as exc:
+        print(f"[ERROR] icon store I/O failure: {exc}", file=sys.stderr)
+        return 1
 
     if copied:
         print(f"[OK] {len(copied)} icon(s) in {project / 'icons'}:", file=sys.stderr)
@@ -138,7 +153,7 @@ def main(argv: Optional[list[str]] = None) -> int:
         for m in missing:
             lib = m.split("/", 1)[0]
             print(
-                f'     ✗ {m}   (search: rg --files "{_GLOBAL_ICONS_DIR / lib}" -g \'*<keyword>*.svg\')',
+                f'     ✗ {m}   (search: python3 "{_ICON_SEARCH_SCRIPT}" "<keyword>" --library {lib})',
                 file=sys.stderr,
             )
         return 1

@@ -57,6 +57,11 @@ if str(_SCRIPTS_DIR) not in sys.path:
     sys.path.insert(0, str(_SCRIPTS_DIR))
 
 from console_encoding import configure_utf8_stdio  # noqa: E402
+from icon_store import (  # noqa: E402
+    IconIntegrityError,
+    IconStore,
+    IconStoreIOError,
+)
 from language_tags import (  # noqa: E402
     LanguageTagError,
     language_base,
@@ -112,7 +117,6 @@ _HEX_COLOR_RE = re.compile(r'#?(?:[0-9A-Fa-f]{3}|[0-9A-Fa-f]{6})\Z')
 _SKILL_DIR = Path(__file__).resolve().parents[2]
 _TEMPLATES_DIR = _SKILL_DIR / 'templates'
 _CATALOGS_PATH = Path(__file__).resolve().parent / 'static' / 'catalogs.json'
-_ICON_LIBRARY_DIR = _TEMPLATES_DIR / 'icons'
 _AI_IMAGE_COMPARISON_DIR = _SKILL_DIR / 'references' / 'ai-image-comparison'
 _TEMPLATE_LIBRARY_CONFIG = {
     'brand': ('brands', 'brands_index.json'),
@@ -130,6 +134,8 @@ _ICON_PREVIEW_SAMPLES = {
     'tabler-outline': ('home', 'chart-line', 'users', 'bulb'),
     'phosphor-duotone': ('house', 'chart-line', 'users', 'target'),
 }
+_ICON_STORE: IconStore | None = None
+_ICON_STORE_LOCK = threading.Lock()
 
 # Keep the long-standing Confirm UI entry port. Live preview uses a separate
 # base range so stale preview tabs cannot address a later Confirm UI process.
@@ -2437,24 +2443,44 @@ def _build_catalogs() -> dict:
     return data
 
 
-def _icon_preview_svg(library: str, name: str) -> str:
-    """Read a trusted sample SVG from the bundled icon templates."""
-    icon_path = _ICON_LIBRARY_DIR / library / f'{name}.svg'
-    raw = icon_path.read_text(encoding='utf-8')
+def _get_icon_store() -> IconStore:
+    """Create at most one validated packed icon store in this server process."""
+    global _ICON_STORE
+    if _ICON_STORE is None:
+        with _ICON_STORE_LOCK:
+            if _ICON_STORE is None:
+                _ICON_STORE = IconStore()
+    return _ICON_STORE
+
+
+def _icon_preview_svg(payload: bytes) -> str:
+    """Normalize one verified packed SVG for the trusted preview response."""
+    raw = payload.decode('utf-8')
     raw = re.sub(r'<\?xml[^>]*>\s*', '', raw)
     raw = re.sub(r'<!--.*?-->\s*', '', raw, flags=re.S)
     return raw.strip()
 
 
 def _build_icon_previews() -> dict:
+    requested = [
+        f'{library}/{name}'
+        for library, names in _ICON_PREVIEW_SAMPLES.items()
+        for name in names
+    ]
+    payloads = _get_icon_store().read_icons(requested)
     previews = {}
     for library, names in _ICON_PREVIEW_SAMPLES.items():
         items = []
         for name in names:
+            icon_id = f'{library}/{name}'
             try:
-                items.append({'name': name, 'svg': _icon_preview_svg(library, name)})
-            except OSError as exc:
-                logger.warning('icon preview sample missing: %s/%s (%s)', library, name, exc)
+                payload = payloads.get(icon_id)
+                if payload is None:
+                    logger.warning('icon preview sample missing: %s', icon_id)
+                    continue
+                items.append({'name': name, 'svg': _icon_preview_svg(payload)})
+            except UnicodeError as exc:
+                logger.warning('icon preview sample is not UTF-8: %s (%s)', icon_id, exc)
         previews[library] = items
     return previews
 
@@ -2609,10 +2635,13 @@ def create_app(
 
     @app.route('/api/icon-previews')
     def get_icon_previews():
-        """Serve real sample icons from templates/icons for the icon chooser."""
-        resp = jsonify(_build_icon_previews())
-        resp.headers['Cache-Control'] = 'no-store'
-        return resp
+        """Serve verified sample icons from the packed distribution."""
+        try:
+            resp = jsonify(_build_icon_previews())
+            resp.headers['Cache-Control'] = 'no-store'
+            return resp
+        except (IconIntegrityError, IconStoreIOError) as exc:
+            return jsonify({'error': f'icon store unavailable: {exc}'}), 500
 
     @app.route('/api/ai-image-comparison')
     def get_ai_image_comparison_manifest():

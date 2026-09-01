@@ -1,6 +1,6 @@
 # SVG Icon Library
 
-**12,027 SVG icons** across five libraries, embedded directly into generated SVG. Default Strategist or the Quick main agent chooses at most one primary library from the four stylistic ones; the brand-logo library (`simple-icons`) is prepared as needed for real brands, alone or alongside it, and is never a separate Confirm UI choice. Upstream versions, licenses, attribution, and trademark boundaries: [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
+**12,027 SVG icons** across five libraries, embedded directly into generated SVG. In the CC Switch distribution, every original SVG byte is stored in deterministic `ZIP_STORED` shards under `packs/`; `icons.manifest.json` maps each logical path to its shard and protects its raw SHA-256. `icon_sync.py` and the Confirm UI read those packs through one validated process-local store without extracting them. Default Strategist or the Quick main agent chooses at most one primary library from the four stylistic ones; the brand-logo library (`simple-icons`) is prepared as needed for real brands, alone or alongside it, and is never a separate Confirm UI choice. Upstream versions, licenses, attribution, and trademark boundaries: [THIRD_PARTY_NOTICES.md](./THIRD_PARTY_NOTICES.md).
 
 | Library | Style | Count | viewBox | Prefix |
 |---------|-------|-------|---------|--------|
@@ -12,7 +12,7 @@
 
 ## Per-project icons folder
 
-This directory is the global library; the resource owner copies chosen icons into `<project>/icons/<lib>/` before SVG authoring:
+This directory is the global logical library; the resource owner copies chosen icons into `<project>/icons/<lib>/` before SVG authoring:
 
 ```bash
 python3 skills/ppt-master/scripts/icon_sync.py <project_path> tabler-outline/home tabler-outline/bulb simple-icons/github
@@ -32,12 +32,14 @@ Missing names, or one batch mixing the four stylistic libraries, exit non-zero; 
 
 ## Searching for Icons
 
-For a known basename run `icon_sync.py` directly; for an uncertain one search only the chosen stylistic library (`simple-icons` only for a real brand mark):
+For a known basename run `icon_sync.py` directly; for an uncertain one search only the chosen stylistic library (`simple-icons` only for a real brand mark). Search output is a stable JSON array; no match prints `[]` and exits successfully:
 
 ```bash
-rg --files "skills/ppt-master/templates/icons/tabler-outline" -g '*chart*.svg'
-rg --files "skills/ppt-master/templates/icons/simple-icons" -g '*github*.svg'
+python3 skills/ppt-master/scripts/icon_search.py chart --library tabler-outline --limit 12
+python3 skills/ppt-master/scripts/icon_search.py github --library simple-icons --limit 12
 ```
+
+Do not unzip or enumerate `packs/` manually. A manifest, license, shard, or distribution-integrity failure is a blocking installation error; reinstall the pinned CC Switch distribution instead of repairing individual files.
 
 **Hard rule**: search by the drawable object, not the abstract concept — these libraries store things that can be drawn (`bulb`, `target`, `trending-up`, `alert-triangle`), so `idea`, `goal`, `growth`, `warning`, `innovation` return nothing in most of them; translate the semantic into an object first. **Reference — not a constraint**: one concept usually has several valid objects, chosen per deck from page register and visual style. **Hard rule**: basenames are not portable across the four stylistic libraries — `alert-*` exists in the tabler libraries but `phosphor-duotone` uses `warning-*`; `arrow-trend-*` in `chunk-filled` is `trending-*` in `tabler-outline`. Do not load a full index or enumerate broad keyword families; re-pick from the narrow result and rerun the batch until clean; never switch stylistic libraries for a missing generic icon. An empty result → try another drawable translation in the same library; when several stay empty, let another carrier (chart, typography, shape) take that semantic rather than forcing a loose icon.
 
