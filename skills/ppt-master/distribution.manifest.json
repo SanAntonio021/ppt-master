@@ -8,8 +8,8 @@
     },
     {
       "path": "CCSWITCH_DISTRIBUTION.md",
-      "sha256": "7dc6225602cff064c2b063048103e12832587f4654875a2921b7ab42b2fe573c",
-      "size": 2018
+      "sha256": "6fafcfab4710643d3d642602067ac6ccf8d4e5740b0689686d829e1d0954381a",
+      "size": 2043
     },
     {
       "path": "LICENSE",
@@ -33,7 +33,7 @@
     },
     {
       "path": "ccswitch.provenance.json",
-      "sha256": "95d0e7f388367499f01c09ac701725040fc71db8a694efad6c4ae3d2cd78e981",
+      "sha256": "bea61b66d971f27ec5d5f1d940161c2cc549ae287962c95efec235b06eebaa66",
       "size": 377
     },
     {
@@ -1203,7 +1203,7 @@
     },
     {
       "path": "scripts/icon_store.py",
-      "sha256": "1e89fd2e3743902c01d88435e2eb56ab13178257a9be44d9a1e4bdfe0cfcd19b",
+      "sha256": "4e517d6844bfb9b10e4f1556e7e65185d6c76ebc1eb8420b9f257fa42b8e0eb4",
       "size": 28229
     },
     {
@@ -4614,7 +4614,7 @@
   ],
   "schema_version": 1,
   "totals": {
-    "bytes": 85520437,
+    "bytes": 85520462,
     "files": 922
   },
   "upstream": {
