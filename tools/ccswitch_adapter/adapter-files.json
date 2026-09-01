@@ -1,0 +1,21 @@
+{
+  "files": [
+    ".gitattributes",
+    ".gitignore",
+    ".github/workflows/ccswitch-reproducibility.yml",
+    "skills/ppt-master/CCSWITCH_DISTRIBUTION.md",
+    "skills/ppt-master/ccswitch.provenance.json",
+    "skills/ppt-master/scripts/confirm_ui/server.py",
+    "skills/ppt-master/scripts/docs/confirm_ui.md",
+    "skills/ppt-master/scripts/icon_search.py",
+    "skills/ppt-master/scripts/icon_store.py",
+    "skills/ppt-master/scripts/icon_sync.py",
+    "skills/ppt-master/templates/icons/README.md",
+    "tools/ccswitch_adapter/README.md",
+    "tools/ccswitch_adapter/adapter-files.json",
+    "tools/ccswitch_adapter/build_distribution.py",
+    "tools/ccswitch_adapter/offline_guard/sitecustomize.py",
+    "tools/ccswitch_adapter/verify_distribution.py"
+  ],
+  "schema_version": 1
+}

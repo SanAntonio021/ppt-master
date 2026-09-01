@@ -109,6 +109,7 @@ projects/*/.review/
 
 # Compressed files
 *.zip
+!skills/ppt-master/templates/icons/packs/*.zip
 *.tar
 *.gz
 *.rar

@@ -1,0 +1,85 @@
+name: CC Switch reproducibility
+
+on:
+  push:
+    branches:
+      - main
+      - "candidate/**"
+    tags:
+      - "v*-ccswitch.*"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  rebuild-and-verify:
+    runs-on: windows-2025
+    timeout-minutes: 30
+
+    steps:
+      - name: Disable Git line-ending conversion before checkout
+        shell: pwsh
+        run: git config --global core.autocrlf false
+
+      - name: Check out candidate adapter
+        uses: actions/checkout@v4
+        with:
+          path: adapter
+          fetch-depth: 1
+          lfs: false
+          persist-credentials: false
+
+      - name: Check out exact official source
+        uses: actions/checkout@v4
+        with:
+          repository: hugohe3/ppt-master
+          ref: c40bca58e168fcef2facdc7612cc352d1233679b
+          path: upstream
+          fetch-depth: 1
+          lfs: false
+          persist-credentials: false
+
+      - name: Use pinned Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.13.1
+
+      - name: Build twice from the same inputs
+        shell: pwsh
+        run: |
+          python adapter/tools/ccswitch_adapter/build_distribution.py `
+            --upstream-root upstream `
+            --adapter-root adapter `
+            --output build-1 `
+            --json-out evidence/build-1.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python adapter/tools/ccswitch_adapter/build_distribution.py `
+            --upstream-root upstream `
+            --adapter-root adapter `
+            --output build-2 `
+            --json-out evidence/build-2.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Compare candidate, rebuilds, manifests, and offline runtime
+        shell: pwsh
+        run: |
+          python adapter/tools/ccswitch_adapter/verify_distribution.py `
+            --candidate-root adapter `
+            --rebuilt-root build-1 `
+            --simulate-archive evidence/simulated-codeload.zip `
+            --json-out evidence/candidate-verification.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          python adapter/tools/ccswitch_adapter/verify_distribution.py `
+            --candidate-root build-1 `
+            --rebuilt-root build-2 `
+            --skip-smoke `
+            --json-out evidence/double-build-verification.json
+          if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+
+      - name: Publish verification evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ccswitch-reproducibility-${{ github.sha }}
+          path: evidence
+          if-no-files-found: error
