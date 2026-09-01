@@ -74,6 +74,6 @@ python tools/ccswitch_adapter/verify_distribution.py `
   --json-out C:\path\to\evidence\real-codeload.json
 ```
 
-Only after that gate passes may the immutable tag be created and `ccswitch` be
-fast-forwarded. Candidate deletion, installation, pin state changes, and
+Only after that gate passes may the immutable tag be created and the default
+`main` branch be fast-forwarded. Candidate deletion, installation, pin state changes, and
 rollback remain release-operator actions outside these build tools.

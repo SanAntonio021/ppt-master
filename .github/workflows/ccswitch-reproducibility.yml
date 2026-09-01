@@ -3,7 +3,7 @@ name: CC Switch reproducibility
 on:
   push:
     branches:
-      - ccswitch
+      - main
       - "candidate/**"
     tags:
       - "v*-ccswitch.*"
