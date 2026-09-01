@@ -1,6 +1,7 @@
 {
   "files": [
     ".gitattributes",
+    ".gitignore",
     ".github/workflows/ccswitch-reproducibility.yml",
     "skills/ppt-master/CCSWITCH_DISTRIBUTION.md",
     "skills/ppt-master/ccswitch.provenance.json",
