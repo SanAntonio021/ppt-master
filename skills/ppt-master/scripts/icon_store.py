@@ -311,9 +311,9 @@ class IconStore:
             "distribution": "ccswitch",
             "fork_repository": "https://github.com/SanAntonio021/ppt-master",
             "upstream_repository": "https://github.com/hugohe3/ppt-master",
-            "upstream_version": "6.1.0",
-            "upstream_commit": "c40bca58e168fcef2facdc7612cc352d1233679b",
-            "release_tag": "v6.1.0-ccswitch.2",
+            "upstream_version": "6.3.0",
+            "upstream_commit": "a4f5487dc930ba22f7002d775f49c81f47210960",
+            "release_tag": "v6.3.0-ccswitch.1",
             "icon_storage": "deterministic-zip-stored-shards",
         }
         if any(provenance.get(key) != value for key, value in required.items()):

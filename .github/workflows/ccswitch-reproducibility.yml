@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           repository: hugohe3/ppt-master
-          ref: c40bca58e168fcef2facdc7612cc352d1233679b
+          ref: a4f5487dc930ba22f7002d775f49c81f47210960
           path: upstream
           fetch-depth: 1
           lfs: false

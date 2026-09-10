@@ -410,7 +410,7 @@ def _verify_provenance(candidate_root: Path) -> dict:
         "distribution": "ccswitch",
         "fork_repository": "https://github.com/SanAntonio021/ppt-master",
         "icon_storage": "deterministic-zip-stored-shards",
-        "release_tag": "v6.1.0-ccswitch.2",
+        "release_tag": "v6.3.0-ccswitch.1",
         "schema_version": 1,
         "upstream_commit": UPSTREAM_COMMIT,
         "upstream_repository": UPSTREAM_REPOSITORY,

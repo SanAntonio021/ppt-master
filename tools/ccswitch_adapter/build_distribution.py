@@ -14,7 +14,7 @@ Usage:
 
 Examples:
     python tools/ccswitch_adapter/build_distribution.py \
-        --upstream-root ../ppt-master-v6.1.0-upstream \
+        --upstream-root ../ppt-master-v6.3.0-upstream \
         --adapter-root . --output ../ppt-master-build-1
 
 Dependencies:
@@ -39,8 +39,8 @@ from typing import Optional
 
 
 UPSTREAM_REPOSITORY = "https://github.com/hugohe3/ppt-master"
-UPSTREAM_VERSION = "6.1.0"
-UPSTREAM_COMMIT = "c40bca58e168fcef2facdc7612cc352d1233679b"
+UPSTREAM_VERSION = "6.3.0"
+UPSTREAM_COMMIT = "a4f5487dc930ba22f7002d775f49c81f47210960"
 ICON_LIBRARIES = (
     "chunk-filled",
     "phosphor-duotone",
@@ -216,7 +216,7 @@ def _validate_upstream_checkout(root: Path, inventory: list[InventoryFile]) -> N
     if not (root / ".git").exists():
         raise BuildError("upstream root must be a Git checkout, not an archive directory")
     if _run_git(root, "rev-parse", "HEAD") != UPSTREAM_COMMIT:
-        raise BuildError("upstream checkout is not the pinned v6.1.0 commit")
+        raise BuildError("upstream checkout is not the pinned v6.3.0 commit")
     status = _run_git(root, "status", "--porcelain", "--untracked-files=all")
     if status:
         raise BuildError("upstream checkout is not clean")
@@ -577,7 +577,7 @@ def build_parser() -> argparse.ArgumentParser:
         description="Build the pinned PPT Master CC Switch distribution.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("--upstream-root", required=True, help="Exact official v6.1.0 checkout")
+    parser.add_argument("--upstream-root", required=True, help="Exact official v6.3.0 checkout")
     parser.add_argument("--adapter-root", required=True, help="Fork checkout containing adapter files")
     parser.add_argument("--output", required=True, help="New output directory; must not exist")
     parser.add_argument("--json-out", help="Optional path for the build report")
