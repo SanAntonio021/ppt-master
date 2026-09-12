@@ -1,7 +1,7 @@
 # CC Switch Distribution Adapter
 
-The Fork's default `main` branch preserves the official PPT Master 6.3.0 workflow at upstream commit
-`a4f5487dc930ba22f7002d775f49c81f47210960`. It changes only the distribution
+The Fork's default `main` branch preserves the official PPT Master 6.3.2 workflow at upstream commit
+`5e8746b08de2d625c371acfa413e17fd27a067f5`. It changes only the distribution
 shape required by CC Switch: the five loose icon trees are represented by
 deterministic stored ZIP shards plus manifests, while runtime commands keep the
 same project-local outputs and authoring behavior.
@@ -28,7 +28,7 @@ manifest itself by raw size and SHA-256. Its own digest and the accepted Fork
 commit belong to the independent local `pptx` pin; the installed skill must not
 self-authorize a changed distribution manifest.
 
-The immutable release label is `v6.3.0-ccswitch.1`. CC Switch follows the
+The immutable release label is `v6.3.2-ccswitch.1`. CC Switch follows the
 fast-forward-only default `main` branch; the tag exists for provenance and rebuild
 comparison. Git LFS is not used.
 

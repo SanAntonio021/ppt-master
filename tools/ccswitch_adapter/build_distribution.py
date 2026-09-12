@@ -14,7 +14,7 @@ Usage:
 
 Examples:
     python tools/ccswitch_adapter/build_distribution.py \
-        --upstream-root ../ppt-master-v6.3.0-upstream \
+        --upstream-root ../ppt-master-v6.3.2-upstream \
         --adapter-root . --output ../ppt-master-build-1
 
 Dependencies:
@@ -39,8 +39,8 @@ from typing import Optional
 
 
 UPSTREAM_REPOSITORY = "https://github.com/hugohe3/ppt-master"
-UPSTREAM_VERSION = "6.3.0"
-UPSTREAM_COMMIT = "a4f5487dc930ba22f7002d775f49c81f47210960"
+UPSTREAM_VERSION = "6.3.2"
+UPSTREAM_COMMIT = "5e8746b08de2d625c371acfa413e17fd27a067f5"
 ICON_LIBRARIES = (
     "chunk-filled",
     "phosphor-duotone",
@@ -216,7 +216,7 @@ def _validate_upstream_checkout(root: Path, inventory: list[InventoryFile]) -> N
     if not (root / ".git").exists():
         raise BuildError("upstream root must be a Git checkout, not an archive directory")
     if _run_git(root, "rev-parse", "HEAD") != UPSTREAM_COMMIT:
-        raise BuildError("upstream checkout is not the pinned v6.3.0 commit")
+        raise BuildError("upstream checkout is not the pinned v6.3.2 commit")
     status = _run_git(root, "status", "--porcelain", "--untracked-files=all")
     if status:
         raise BuildError("upstream checkout is not clean")
@@ -227,6 +227,20 @@ def _validate_upstream_checkout(root: Path, inventory: list[InventoryFile]) -> N
         raise BuildError("upstream checkout files do not match the Git index")
     if _run_git(root, "diff", "--name-only", "HEAD"):
         raise BuildError("upstream checkout raw files differ from HEAD")
+    # Git diff applies clean filters and may hide CRLF conversion on Windows.
+    # The distribution manifest must bind the actual official blob bytes.
+    raw_tree = _run_git(root, "ls-tree", "-rz", "--full-tree", "HEAD")
+    for row in raw_tree.split("\0"):
+        if not row:
+            continue
+        header, relative = row.split("\t", 1)
+        mode, kind, expected_oid = header.split()
+        if kind != "blob" or mode not in {"100644", "100755"}:
+            raise BuildError(f"unsupported official tree entry: {relative}")
+        raw = root.joinpath(*relative.split("/")).read_bytes()
+        actual_oid = hashlib.sha1(b"blob " + str(len(raw)).encode("ascii") + b"\0" + raw).hexdigest()
+        if actual_oid != expected_oid:
+            raise BuildError(f"upstream raw bytes differ from official Git blob: {relative}")
     promisor = _run_git(
         root,
         "config",
@@ -577,7 +591,7 @@ def build_parser() -> argparse.ArgumentParser:
         description="Build the pinned PPT Master CC Switch distribution.",
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
-    parser.add_argument("--upstream-root", required=True, help="Exact official v6.3.0 checkout")
+    parser.add_argument("--upstream-root", required=True, help="Exact official v6.3.2 checkout")
     parser.add_argument("--adapter-root", required=True, help="Fork checkout containing adapter files")
     parser.add_argument("--output", required=True, help="New output directory; must not exist")
     parser.add_argument("--json-out", help="Optional path for the build report")
