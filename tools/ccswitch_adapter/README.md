@@ -1,8 +1,8 @@
 # CC Switch Adapter Build Tools
 
 These standard-library tools reproduce the `ccswitch` distribution from the
-complete official PPT Master 6.3.2 checkout at
-`5e8746b08de2d625c371acfa413e17fd27a067f5`. They do not update the official
+complete official PPT Master 6.6.0 checkout at
+`a50758ac29ec027e85966db33e2ae80031446756`. They do not update the official
 source, install a skill, or write CC Switch runtime directories.
 
 ## Inputs
@@ -35,13 +35,13 @@ Run two builds into fresh directories:
 
 ```powershell
 python tools/ccswitch_adapter/build_distribution.py `
-  --upstream-root C:\path\to\official-v6.3.2 `
+  --upstream-root C:\path\to\official-v6.6.0 `
   --adapter-root C:\path\to\ppt-master-ccswitch `
   --output C:\path\to\build-1 `
   --json-out C:\path\to\evidence\build-1.json
 
 python tools/ccswitch_adapter/build_distribution.py `
-  --upstream-root C:\path\to\official-v6.3.2 `
+  --upstream-root C:\path\to\official-v6.6.0 `
   --adapter-root C:\path\to\ppt-master-ccswitch `
   --output C:\path\to\build-2 `
   --json-out C:\path\to\evidence\build-2.json
