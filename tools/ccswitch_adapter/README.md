@@ -5,10 +5,12 @@ complete official PPT Master 6.6.0 checkout at
 `a50758ac29ec027e85966db33e2ae80031446756`. They do not update the official
 source, install a skill, or write CC Switch runtime directories.
 
-The `.2` adapter allowlist also carries the limited discovery and confirmed-task
+The `.3` adapter allowlist also carries the limited discovery and confirmed-task
 handoff changes documented in `skills/ppt-master/CCSWITCH_DISTRIBUTION.md`.
 Keep these maintained files on the allowlist when rebuilding; copying only the
 icon adapters would silently restore the upstream workflow entry.
+Release `.3` fronts the trigger boundary for truncated host discovery catalogs;
+its strict provenance checks must agree with the runtime icon store.
 
 ## Inputs
 

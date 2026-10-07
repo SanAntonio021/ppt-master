@@ -2,7 +2,7 @@
   "distribution": "ccswitch",
   "fork_repository": "https://github.com/SanAntonio021/ppt-master",
   "icon_storage": "deterministic-zip-stored-shards",
-  "release_tag": "v6.6.0-ccswitch.2",
+  "release_tag": "v6.6.0-ccswitch.3",
   "schema_version": 1,
   "upstream_commit": "a50758ac29ec027e85966db33e2ae80031446756",
   "upstream_repository": "https://github.com/hugohe3/ppt-master",

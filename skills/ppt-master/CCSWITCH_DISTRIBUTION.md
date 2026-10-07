@@ -13,6 +13,10 @@ genuine prior decisions through the existing confirmation branches. Direct
 use retains the complete workflow. This Fork therefore maintains both
 distribution and narrowly scoped handoff differences from upstream.
 
+Release `.3` puts the user's requested concise Chinese trigger boundary first
+in the discovery description so truncated host catalogs retain it. The workflow
+and handoff behavior are unchanged from `.2`.
+
 ## Runtime contract
 
 - `scripts/icon_sync.py` keeps the established
@@ -35,7 +39,7 @@ manifest itself by raw size and SHA-256. Its own digest and the accepted Fork
 commit belong to the independent local `pptx` pin; the installed skill must not
 self-authorize a changed distribution manifest.
 
-The immutable release label is `v6.6.0-ccswitch.2`. CC Switch follows the
+The immutable release label is `v6.6.0-ccswitch.3`. CC Switch follows the
 fast-forward-only default `main` branch; the tag exists for provenance and rebuild
 comparison. Git LFS is not used.
 
@@ -55,7 +59,7 @@ explicit allowlist. Keep the upstream commit fixed for this release; edit the
 maintained checkout, never the installed CC Switch copy. Store Git metadata
 outside the cloud-synchronized working tree.
 
-The `.2` source adds discovery and handoff behavior; publication requires the
+The `.3` source retains the discovery and handoff behavior; publication requires the
 reproducible build, integrity checks, independent behavioral trials, and runtime
 verification. Source edits alone do not establish those results. The external
 `pptx` release pin records the accepted commit and manifest digest.

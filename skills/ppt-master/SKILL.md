@@ -1,13 +1,10 @@
 ---
 name: ppt-master
 description: >
+  仅在明确点名 PPT Master、继续其既有工程，或接收协调流程已选定的制作任务时使用。普通 PPT 请求先由 pptx 选择路线。
   AI-driven presentation workflow for generating editable PPTX decks and slides,
   reconstructing page visuals, creating reusable Brand/Style/Layout/Deck
   workspaces, filling native PPTX templates, and enhancing finished PPTX files.
-  Use when the user explicitly names PPT Master, continues an existing PPT
-  Master project, or a coordinating workflow explicitly selects PPT Master
-  and hands over a presentation task. General PPT creation or editing alone
-  does not select this workflow.
 metadata:
   version: "6.6.0"
   copyright: "Copyright (c) 2025-2026 Hugo He"

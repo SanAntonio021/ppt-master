@@ -8,8 +8,8 @@
     },
     {
       "path": "CCSWITCH_DISTRIBUTION.md",
-      "sha256": "5c6554965762beb2d904d82d05aa4e1a88eb48f6059cadac8a3b29e17a104c57",
-      "size": 3128
+      "sha256": "6f9eedd1a0b4833c59f40d3b5002db6505b30da2177b3fcb2ce157dd937b9fda",
+      "size": 3340
     },
     {
       "path": "LICENSE",
@@ -18,8 +18,8 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "0597abb5e966ab15c07bde6b377706883f3ba3087984cf5b15f75f2c8d02dcdc",
-      "size": 10184
+      "sha256": "da9a58a16147503c2d57a28ee32aab3458b87d3b3b62cd4df33e2ee43f92e043",
+      "size": 10085
     },
     {
       "path": "SPONSORS.md",
@@ -33,7 +33,7 @@
     },
     {
       "path": "ccswitch.provenance.json",
-      "sha256": "eb241c2fb2fb48d952f1440d7a6f6e6a56c6864796d7313902038553277df4a6",
+      "sha256": "0caab5eed22996fabcbf7584a190c18e230712a9185bf48c9489591f93a16865",
       "size": 377
     },
     {
@@ -1223,7 +1223,7 @@
     },
     {
       "path": "scripts/icon_store.py",
-      "sha256": "d70f691402f1feb648cad0816e876fc5eda5c2cebf1cd0e8e359df292a71582f",
+      "sha256": "d66be8ad0e918b267aca859750217ed5ee203495625ebe8430952187c9229f21",
       "size": 28229
     },
     {
@@ -4894,7 +4894,7 @@
   ],
   "schema_version": 1,
   "totals": {
-    "bytes": 90066571,
+    "bytes": 90066684,
     "files": 978
   },
   "upstream": {
