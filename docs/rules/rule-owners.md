@@ -4,6 +4,11 @@
 
 ## 1. Rules shared by Default and Quick
 
+CC Switch handoff adaptation: `references/confirmed-handoff.md` owns retained
+confirmation evidence and scope. `SKILL.md` and `workflows/generate-pptx.md`
+carry entry pointers. Existing confirmation-surface and runtime authorities
+continue to own surface selection and technical gates.
+
 | ID | Rule (one line) | Owner | Pointer only |
 |---|---|---|---|
 | R01 | Final carrier-receipt review and "absence needs a reason": compare `[CARRIERS]` with retained page jobs, resource roles, and geometry signatures; a deck-wide zero or an under-carried relationship needs one stated reason per family or page | `references/executor-base.md` §3 Checkpoints | `workflows/generate-pptx.md` Step 6, `workflows/profiles/quick-generate.md` §4 |

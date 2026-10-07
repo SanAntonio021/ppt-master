@@ -313,7 +313,7 @@ class IconStore:
             "upstream_repository": "https://github.com/hugohe3/ppt-master",
             "upstream_version": "6.6.0",
             "upstream_commit": "a50758ac29ec027e85966db33e2ae80031446756",
-            "release_tag": "v6.6.0-ccswitch.1",
+            "release_tag": "v6.6.0-ccswitch.2",
             "icon_storage": "deterministic-zip-stored-shards",
         }
         if any(provenance.get(key) != value for key, value in required.items()):

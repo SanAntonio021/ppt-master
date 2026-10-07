@@ -46,6 +46,7 @@
     "skills/ppt-master/workflows/generate-pptx.md": 11000,
     "skills/ppt-master/workflows/stages/apply-template-workspace.md": 2750,
     "skills/ppt-master/references/confirm-surface.md": 3000,
+    "skills/ppt-master/references/confirmed-handoff.md": 750,
     "skills/ppt-master/references/video-design.md": 2500,
     "skills/ppt-master/references/native-formula.md": 1500,
     "skills/ppt-master/references/semantic-svg.md": 1500,
@@ -83,6 +84,14 @@
     "skills/ppt-master/templates/icons/README.md": 1750
   },
   "load_sets": {
+    "support.confirmed-handoff": {
+      "description": "Coordinator-selected tasks reuse confirmed decisions before the selected runtime.",
+      "scope": "incremental",
+      "files": [
+        "skills/ppt-master/references/confirmed-handoff.md"
+      ],
+      "max_tokens": 750
+    },
     "bootstrap.routing": {
       "description": "Repository entry plus the single route-selection authority.",
       "scope": "cumulative",
@@ -2321,6 +2330,10 @@
   ],
   "coverage": {
     "exempt": [
+      {
+        "glob": "skills/ppt-master/CCSWITCH_DISTRIBUTION.md",
+        "reason": "Maintainer-only distribution build and release record; never loaded during presentation generation."
+      },
       {
         "glob": "skills/ppt-master/workflows/index.md",
         "reason": "Maintainer-only workflow inventory; never loaded during task execution."

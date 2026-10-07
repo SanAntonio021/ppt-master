@@ -2,6 +2,11 @@
 
 This file is the project entry point for general AI agents.
 
+Before maintenance, read `README.md` and
+[`CCSWITCH_DISTRIBUTION.md`](skills/ppt-master/CCSWITCH_DISTRIBUTION.md), inspect
+existing results, and follow `tools/ccswitch_adapter/README.md` for rebuilding
+the maintained distribution. Keep unrelated user and cloud-sync files intact.
+
 **You MUST read [`skills/ppt-master/SKILL.md`](skills/ppt-master/SKILL.md) before any PPT generation task or repo modification.** It owns global execution discipline and points to the route selector; after routing, the selected runtime authority owns its steps, gates, and commands.
 
 **Repository execution anchor**: resolve the absolute repository root from this

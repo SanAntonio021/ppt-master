@@ -1,5 +1,9 @@
 # PPT Master — AI generates native PowerPoint from any document
 
+This maintained CC Switch fork's scope, build entry, and release validation
+requirements are in [CCSWITCH_DISTRIBUTION.md](skills/ppt-master/CCSWITCH_DISTRIBUTION.md).
+Read that record before maintenance; the upstream product documentation follows.
+
 [![Version](https://img.shields.io/github/v/release/hugohe3/ppt-master?label=version&color=blue)](https://github.com/hugohe3/ppt-master/releases)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![GitHub stars](https://img.shields.io/github/stars/hugohe3/ppt-master.svg)](https://github.com/hugohe3/ppt-master/stargazers)

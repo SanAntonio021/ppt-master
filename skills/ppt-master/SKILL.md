@@ -4,10 +4,10 @@ description: >
   AI-driven presentation workflow for generating editable PPTX decks and slides,
   reconstructing page visuals, creating reusable Brand/Style/Layout/Deck
   workspaces, filling native PPTX templates, and enhancing finished PPTX files.
-  Use when the user asks to create, generate, reconstruct, regenerate, beautify,
-  redesign, template, fill, or enhance a presentation, PPT, PPTX, slide deck, or
-  courseware — including adding narration or animation to one — requests a
-  presentation-authored narrated/self-running video, or mentions ppt-master.
+  Use when the user explicitly names PPT Master, continues an existing PPT
+  Master project, or a coordinating workflow explicitly selects PPT Master
+  and hands over a presentation task. General PPT creation or editing alone
+  does not select this workflow.
 metadata:
   version: "6.6.0"
   copyright: "Copyright (c) 2025-2026 Hugo He"
@@ -39,6 +39,10 @@ use CWD, or assume a repo checkout. If unavailable, ask; never search or guess.
    authority.
 5. Read only the resulting runtime authority and its explicitly triggered
    supporting documents.
+
+For a coordinating workflow's handoff, read
+[`references/confirmed-handoff.md`](references/confirmed-handoff.md) before
+starting the selected runtime. Retain the chosen production route on revision.
 
 | Selected route / profile | Runtime authority |
 |---|---|

@@ -8,8 +8,8 @@
     },
     {
       "path": "CCSWITCH_DISTRIBUTION.md",
-      "sha256": "11b62b6bab24f49ba3409c600c7e1c4a1b33fed55cdfe0469d0cb95fea8fda6f",
-      "size": 2043
+      "sha256": "5c6554965762beb2d904d82d05aa4e1a88eb48f6059cadac8a3b29e17a104c57",
+      "size": 3128
     },
     {
       "path": "LICENSE",
@@ -18,8 +18,8 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "6b568cfa5b17229f264c3366c5e07844df5749b243c31af15e12424d75c30185",
-      "size": 10043
+      "sha256": "0597abb5e966ab15c07bde6b377706883f3ba3087984cf5b15f75f2c8d02dcdc",
+      "size": 10184
     },
     {
       "path": "SPONSORS.md",
@@ -33,7 +33,7 @@
     },
     {
       "path": "ccswitch.provenance.json",
-      "sha256": "da9146d2988c9b590d64f6348a288b06fd4c05cd06616a2ae832024851541111",
+      "sha256": "eb241c2fb2fb48d952f1440d7a6f6e6a56c6864796d7313902038553277df4a6",
       "size": 377
     },
     {
@@ -330,6 +330,11 @@
       "path": "references/confirm-surface.md",
       "sha256": "aa914572233b29a9705799eb5de0d7f1adfa1405fb14e53369bcda94712b5d79",
       "size": 10102
+    },
+    {
+      "path": "references/confirmed-handoff.md",
+      "sha256": "b4b25a3245a1cf1f4c3eca3237232272d49c38fab109c33e9b1494cf496d5777",
+      "size": 2811
     },
     {
       "path": "references/executor-base.md",
@@ -1218,7 +1223,7 @@
     },
     {
       "path": "scripts/icon_store.py",
-      "sha256": "dc1180f77fd882655473616f493be231973750924a14bb4bae9fb803e793e176",
+      "sha256": "d70f691402f1feb648cad0816e876fc5eda5c2cebf1cd0e8e359df292a71582f",
       "size": 28229
     },
     {
@@ -1763,8 +1768,8 @@
     },
     {
       "path": "scripts/prompt_audit_manifest.json",
-      "sha256": "57c1c217980aa69238a69fa60b11e442af111eac74d65ef4aaf5005ae61c1295",
-      "size": 99405
+      "sha256": "f8325e8df6c82bbb16dd26dbff03ee1d03c2a47e04895d72d6b84a1482cc8fb3",
+      "size": 99954
     },
     {
       "path": "scripts/register_template.py",
@@ -4803,8 +4808,8 @@
     },
     {
       "path": "workflows/generate-pptx.md",
-      "sha256": "d58908b06f43fc1f84f8133d960ac16b80573d4aad48bc0ba01ec6293f5a54a7",
-      "size": 46172
+      "sha256": "1d8f3b2f38539729aa57443ad675d941d3548b852507cc1a479f8e54cb927e4e",
+      "size": 46629
     },
     {
       "path": "workflows/governance/failure-recovery.md",
@@ -4889,8 +4894,8 @@
   ],
   "schema_version": 1,
   "totals": {
-    "bytes": 90061528,
-    "files": 977
+    "bytes": 90066571,
+    "files": 978
   },
   "upstream": {
     "commit": "a50758ac29ec027e85966db33e2ae80031446756",

@@ -12,6 +12,7 @@ description: Default Generate PPTX authority for source intake, planning, SVG au
 
 **Generate-specific execution discipline**:
 
+- For a coordinator-selected task, apply [`confirmed-handoff.md`](../references/confirmed-handoff.md) to retained decisions at the corresponding steps; run this same pipeline without restarting route selection.
 - Page authoring stays with the current main agent ([`executor-base.md`](../references/executor-base.md) §3); the checker cadence is Step 6's.
 - Gate checklists are internal: on success continue with at most one compact status line; on failure report only the blocking items and required recovery.
 
@@ -126,6 +127,8 @@ This is a capability map, not a usage checklist; direction construction follows 
 **User images**: if the user provided images, run `python3 ${SKILL_DIR}/scripts/analyze_images.py <project_path>/images` before the Design Spec and read `analysis/image_analysis.csv` before §VIII. The CSV is a regenerated view of `images/`: rerun after any change, never treat it as a store. Never bulk-open images: Strategist inspects one specifically ambiguous asset under [`strategist-image.md`](../references/strategist-image.md) and records the result in §VIII; Executor inspects one `Existing` / `Sourced` asset only for crop, focal placement, or text contrast.
 
 ⛔ **BLOCKING — two-stage confirmation**: the always-on user gate unless explicitly delegated. Stage 1 confirms the communication contract and exactly one template mode (`free_design` or `templates`, the latter expanding the four registered-kind selectors plus supplied roots and requiring at least one selection). Final Stage 2 confirms the complete deck solution plus production mechanics only after the Stage-1 choice is installed or free design is closed; `refine_spec: true` adds one chat gate after Design Spec Gate 1. Author each stage once; submitted values — including blanks and unusual overrides — are authoritative.
+
+**Retained confirmation**: for a coordinator handoff, apply [`confirmed-handoff.md`](../references/confirmed-handoff.md) before requesting either stage's confirmation. Its evidence check determines which items remain open in the branches below.
 
 **Only the user confirms**: the agent authors recommendations, operates the server, reads state, and applies a template. It never confirms on the user's behalf, automates submission, synthesizes a payload, or writes user result state; silence confirms nothing. Under explicit delegation the agent makes the Stage-1 decision, installs it, derives Stage 2, and presents one complete summary without fabricating UI receipts.
 
