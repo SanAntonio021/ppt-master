@@ -6,7 +6,7 @@ description: >
   reconstructing page visuals, creating reusable Brand/Style/Layout/Deck
   workspaces, filling native PPTX templates, and enhancing finished PPTX files.
 metadata:
-  version: "6.6.0"
+  version: "6.7.0"
   copyright: "Copyright (c) 2025-2026 Hugo He"
   license: "MIT"
   official_repository: "https://github.com/hugohe3/ppt-master"

@@ -22,7 +22,13 @@
     "tools/ccswitch_adapter/adapter-files.json",
     "tools/ccswitch_adapter/build_distribution.py",
     "tools/ccswitch_adapter/offline_guard/sitecustomize.py",
-    "tools/ccswitch_adapter/verify_distribution.py"
+    "tools/ccswitch_adapter/verify_distribution.py",
+    "skills/ppt-master/scripts/image_backends/backend_gemini.py",
+    "skills/ppt-master/scripts/image_backends/backend_openrouter.py",
+    "skills/ppt-master/scripts/image_backends/backend_fal.py",
+    "skills/ppt-master/.env.example",
+    ".env.example",
+    "skills/ppt-master/scripts/image_gen.py"
   ],
   "schema_version": 1
 }
