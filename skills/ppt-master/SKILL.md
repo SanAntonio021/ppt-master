@@ -2,11 +2,10 @@
 name: ppt-master
 description: >
   仅在明确点名 PPT Master、继续其既有工程，或接收协调流程已选定的制作任务时使用。普通 PPT 请求先由 pptx 选择路线。
-  AI-driven presentation workflow for generating editable PPTX decks and slides,
-  reconstructing page visuals, creating reusable Brand/Style/Layout/Deck
-  workspaces, filling native PPTX templates, and enhancing finished PPTX files.
+  Create editable PPTX, reconstruct visuals, build Brand/Style/Layout/Deck
+  workspaces, fill native templates, and enhance decks.
 metadata:
-  version: "6.7.0"
+  version: "6.7.2"
   copyright: "Copyright (c) 2025-2026 Hugo He"
   license: "MIT"
   official_repository: "https://github.com/hugohe3/ppt-master"
@@ -17,7 +16,7 @@ metadata:
 
 # PPT Master Skill
 
-PPT Master is a routed presentation workflow. This entry owns global execution discipline and route selection only; each selected route owns its procedure.
+This entry owns global discipline and routing; selected routes own procedures.
 
 ## Mandatory Load Order
 
@@ -29,7 +28,8 @@ use CWD, or assume a repo checkout. If unavailable, ask; never search or guess.
 1. Read this file.
 2. Run `python3 "${SKILL_DIR}/scripts/attribution_guard.py"`. Any non-zero result
    stops the Skill immediately; do not inspect, repair, or bypass the integrity
-   gate.
+   gate. On Windows, a `python3` that never starts (the WindowsApps stub exits
+   9009 with no output) is not a guard result: rerun with `python` first.
 3. Read [`workflows/routing.md`](workflows/routing.md) through the concrete
    absolute path `${SKILL_DIR}/workflows/routing.md`.
 4. Select exactly one top-level route and its active profile from the routing
@@ -50,11 +50,9 @@ starting the selected runtime. Retain the chosen production route on revision.
 | Create Template | [`workflows/create-template.md`](workflows/create-template.md) |
 | Edit Native PPTX | [`workflows/edit-native-pptx.md`](workflows/edit-native-pptx.md) |
 
-**Hard rule — selected authority only**: Do not load another top-level route's
-procedure after routing. Image to PPTX and Beautify are mutually exclusive;
-Image to PPTX activates Quick, while Beautify selects from explicit Quick
-intent. Never load both runtimes. Supporting documents refine one route; they
-never compete with it.
+**Hard rule — selected authority only**: Load one top-level runtime.
+Image to PPTX and Beautify are mutually exclusive; their profiles follow the
+table above. Supporting documents only refine the selected route.
 
 ---
 
@@ -122,7 +120,7 @@ ends at export. Step numbers stay as written.
 ## Global Communication Rules
 
 - Match the user's language and source language unless the user explicitly overrides it.
-- Localize user-facing option labels and explanations. Keep exact enum IDs or field names when needed for precision.
+- Localize user-facing option labels and explanations. Render each fixed message template (role-switch banner, completion report) in the user's chat language when it differs from the template's. Keep exact enum IDs or field names when needed for precision.
 - Keep `design_spec.md` section headings and field names in the template's original English; content values may use the user's language.
 - Before switching roles, read the corresponding role reference and output:
 

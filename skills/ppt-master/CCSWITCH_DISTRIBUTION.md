@@ -1,7 +1,7 @@
 # CC Switch Distribution Adapter
 
-The Fork's default `main` branch uses official PPT Master 6.7.0 at upstream
-commit `b4efe3ddf237a97a42880164759162f8e2412f2f`. The five loose icon trees
+The Fork's default `main` branch uses official PPT Master 6.7.2 at upstream
+commit `b113d23720260c411ee47b2b05a73615f954deeb`. The five loose icon trees
 are represented by deterministic stored ZIP shards plus manifests. Runtime
 commands keep the same project-local outputs and quality gates.
 
@@ -39,7 +39,7 @@ manifest itself by raw size and SHA-256. Its own digest and the accepted Fork
 commit belong to the independent local `pptx` pin; the installed skill must not
 self-authorize a changed distribution manifest.
 
-The immutable release label is `v6.7.0-ccswitch.1`. CC Switch follows the
+The immutable release label is `v6.7.2-ccswitch.1`. CC Switch follows the
 fast-forward-only default `main` branch; the tag exists for provenance and rebuild
 comparison. Git LFS is not used.
 
@@ -64,7 +64,7 @@ reproducible build, integrity checks, independent behavioral trials, and runtime
 verification. Source edits alone do not establish those results. The external
 `pptx` release pin records the accepted commit and manifest digest.
 
-## Candidate 6.7.0 local defaults
+## Candidate 6.7.2 local defaults
 
 This upgrade retains the 6.6.0 Gemini, OpenRouter and fal default model IDs.
 New model support requires an explicit existing backend/model selection; the

@@ -8,7 +8,7 @@
     },
     {
       "path": "CCSWITCH_DISTRIBUTION.md",
-      "sha256": "e8ec184e06c5ba7ba6e5e20f638837c2b288eac24130a727e79aaba25f58745c",
+      "sha256": "1ce409ec9d727fea3cb0b2185da2c3b4e698f8edd4d88194cb1002f0b0fa5725",
       "size": 3670
     },
     {
@@ -18,8 +18,8 @@
     },
     {
       "path": "SKILL.md",
-      "sha256": "198987354030ff91887864c21b8f5595d4db7deb084527cca90f6cb7d0c5b999",
-      "size": 10085
+      "sha256": "55ea8639acc03db6bf99d9a25e27550422a8fe45fe57277084ae52c854c9c590",
+      "size": 10071
     },
     {
       "path": "SPONSORS.md",
@@ -33,7 +33,7 @@
     },
     {
       "path": "ccswitch.provenance.json",
-      "sha256": "8d5bcc2dabd8d1f4b3ee5683f28bd1c51f201815527ecadf6ad3971644e900ec",
+      "sha256": "c0b006fb8ce31c8260936dce40eb20ce9312e472af46444d4b2a2e673df9270d",
       "size": 377
     },
     {
@@ -968,13 +968,13 @@
     },
     {
       "path": "scripts/confirm_ui/static/app.js",
-      "sha256": "c71207c61a8d7fa58ee46ca80239fa712d92859d65041676415ecc1c8423a324",
-      "size": 242095
+      "sha256": "6984b055a3edc2a676d5dcf67ff8543c6f4a1c0c9d486a2e687f0102eceb6f4b",
+      "size": 240187
     },
     {
       "path": "scripts/confirm_ui/static/catalogs.json",
-      "sha256": "1251b74d164458a4d6c63e46b03e4ab810fc12ec5c6d4c0b81bc6fa9661cf27c",
-      "size": 58118
+      "sha256": "44878ed36b0c905d498afac6ef804669bc256e8fbb8beb550ab7361a98692e88",
+      "size": 58692
     },
     {
       "path": "scripts/confirm_ui/static/index.html",
@@ -1093,13 +1093,13 @@
     },
     {
       "path": "scripts/docs/confirm_ui.md",
-      "sha256": "db1e019712800b3a2cf754e83549c64996a292eb4d65e3f30b10d88f67f83494",
-      "size": 56386
+      "sha256": "4f0e249b33913a444327dea52349d4ed3d4bbd8dd748a62015db4e380960aaeb",
+      "size": 56378
     },
     {
       "path": "scripts/docs/conversion.md",
-      "sha256": "468c8f61ee61779e26b1869b3e05d5384a26eb9c9962b4eeb05eac23aaf2fb45",
-      "size": 34532
+      "sha256": "c4e6a0ad833b616387c0263d897a5d7f245033e0b8b200202da9104d80404f8a",
+      "size": 35629
     },
     {
       "path": "scripts/docs/image.md",
@@ -1138,8 +1138,8 @@
     },
     {
       "path": "scripts/docs/project.md",
-      "sha256": "a580985a5fd16f8578612e9e2a76b5fc468c524a10d808e453bdd0fd0dc4e8ed",
-      "size": 18420
+      "sha256": "9bf8401a644e9b1dd5d83c110cadc9c4295ad189f58d9ff5640df62adff0ff07",
+      "size": 19058
     },
     {
       "path": "scripts/docs/prompt_audit.md",
@@ -1163,8 +1163,8 @@
     },
     {
       "path": "scripts/docs/svg_editor.md",
-      "sha256": "9d9581b739e24aa5399ebb6e600793b51fd0f5591d7d0cbd6b2d0b4382860417",
-      "size": 5558
+      "sha256": "3d5f187c91d55c291f99f54b9f8f3a7e98768b130cef7d7d6ab96391e777f31a",
+      "size": 6396
     },
     {
       "path": "scripts/docs/template-tools.md",
@@ -1233,7 +1233,7 @@
     },
     {
       "path": "scripts/icon_store.py",
-      "sha256": "1afa1f9ca90a37325e4eb0ad06ddde4108dead61191e3830bc20c14e09c06cfe",
+      "sha256": "5b3d7db8d69a9edcbf13c138e4ae9971c3c673809248289a8c1912bcfb02d8be",
       "size": 28229
     },
     {
@@ -1328,8 +1328,8 @@
     },
     {
       "path": "scripts/image_gen.py",
-      "sha256": "9202137a41d4f86446eddc77403ab0a4438406080a5f8daa36f0337618866065",
-      "size": 55634
+      "sha256": "977c30f230c1ab825173e3275cce7f009bd46f1295e4fc774f1c18ba3a5a9236",
+      "size": 54200
     },
     {
       "path": "scripts/image_search.py",
@@ -1343,8 +1343,8 @@
     },
     {
       "path": "scripts/image_sources/provider_common.py",
-      "sha256": "95dfc90dc2d8106d8d77575c9ae2aa9c9976163e77ed0dde3e7c3e279215456c",
-      "size": 21246
+      "sha256": "bfe2ba43498cd5ebce2b11ce4ac7d407426cc9a08f13cb2de9252bf45ad918b5",
+      "size": 21763
     },
     {
       "path": "scripts/image_sources/provider_openverse.py",
@@ -1388,8 +1388,8 @@
     },
     {
       "path": "scripts/narration_sync.py",
-      "sha256": "bb84a502d953390db85df5c63f34510958229f2b56cf58f97dda5d5c3049a29a",
-      "size": 77381
+      "sha256": "6d0f241a6a4b00d030aa71eb5603585b213ec6414854ada2ae3e2db6595f9de6",
+      "size": 77447
     },
     {
       "path": "scripts/native_payloads.py",
@@ -1398,8 +1398,8 @@
     },
     {
       "path": "scripts/notes_to_audio.py",
-      "sha256": "212525e12388a158a23d55773db8182eb7412f8636574e48de14b09dc349cfa8",
-      "size": 36039
+      "sha256": "1b35d62a6c948108e5bd3e702114ba2a0e55758a1c955882f9ec50ed25862e8e",
+      "size": 36216
     },
     {
       "path": "scripts/page_context.py",
@@ -1713,8 +1713,8 @@
     },
     {
       "path": "scripts/pptx_to_svg/txbody_to_svg.py",
-      "sha256": "24d7a56380c31d1043c1788b8afabb386f522a7c11813061a84859f91f1002aa",
-      "size": 62294
+      "sha256": "33c95520071d26cdcdfda9f1b5ba01814b146f1bca95348d2faa2da595e66ce3",
+      "size": 62316
     },
     {
       "path": "scripts/pptx_transitions.py",
@@ -1738,8 +1738,8 @@
     },
     {
       "path": "scripts/project_management/cli.py",
-      "sha256": "a7552ae7deeec56fe3bd3714d04c30f3f791ce2eb3af40aa4d3c2a138422a194",
-      "size": 60778
+      "sha256": "3e049947b1c07f34603e41325202eb608e0c08321796e5de9d9b8ff2dc733cbf",
+      "size": 64944
     },
     {
       "path": "scripts/project_management/page_context.py",
@@ -1823,8 +1823,8 @@
     },
     {
       "path": "scripts/slide_roster.py",
-      "sha256": "f859e04fa5a4c54bdc420a5467458c32269d2af653ec05b61ce7a6ad811e70f7",
-      "size": 1072
+      "sha256": "8bdfb9e431eccb785a17a8f825fe82cde9d054a5b04ce122b23735b3e4cd0fa3",
+      "size": 1261
     },
     {
       "path": "scripts/sound_sync.py",
@@ -1838,8 +1838,8 @@
     },
     {
       "path": "scripts/source_to_md/_batch.py",
-      "sha256": "bf4be0617b7511948e181eb1f3fa97dc040e4a010c4eb061dd84be9eca39369b",
-      "size": 4479
+      "sha256": "687ee55945c8d280e52978bb807ef0f32cf5360d909861df73dc4d128c196fd3",
+      "size": 4841
     },
     {
       "path": "scripts/source_to_md/_conversion_profile.py",
@@ -1853,8 +1853,8 @@
     },
     {
       "path": "scripts/source_to_md/doc_to_md.py",
-      "sha256": "bc3147f0596edff6dda59de661fe5e7ed7b83a13c7b62a80245e8ee6b5bd024b",
-      "size": 70266
+      "sha256": "89be45af368ebbce86f8ad0424cac620043bc22a6ac1b73c8c77afeef8ada6a0",
+      "size": 71468
     },
     {
       "path": "scripts/source_to_md/excel_to_md.py",
@@ -1863,8 +1863,8 @@
     },
     {
       "path": "scripts/source_to_md/pdf_to_md.py",
-      "sha256": "b9f5fde51ed4775d5eecee8ecb4699abae5d7f54189445d2eb3b8325b96dbd76",
-      "size": 74201
+      "sha256": "527832f922633b1596cf1b621a4459c035fa6a145d0636702f6fc191180a8c4d",
+      "size": 69916
     },
     {
       "path": "scripts/source_to_md/ppt_to_md.py",
@@ -1873,8 +1873,8 @@
     },
     {
       "path": "scripts/source_to_md/web_to_md.py",
-      "sha256": "85e02fa0ec6ca232357672ef7ee90f7494db5b52f48ace768cb4483ededfe383",
-      "size": 62585
+      "sha256": "f0a1dbda631c7d9f31e6859a7e026f35be7dfd9596249d74de819c5876619cdb",
+      "size": 63242
     },
     {
       "path": "scripts/spec_review/__init__.py",
@@ -1888,8 +1888,8 @@
     },
     {
       "path": "scripts/spec_review/static/app.js",
-      "sha256": "a126112f2f1a80a96482cf7e10f0f4a4439fb2e72f7291a92d60f7bcb764d246",
-      "size": 30096
+      "sha256": "3aa6ae1f616f5a1a579bfdbf10d542717a2bee5a0f7c898aa93408ce0b8cf4db",
+      "size": 30472
     },
     {
       "path": "scripts/spec_review/static/index.html",
@@ -1933,18 +1933,18 @@
     },
     {
       "path": "scripts/svg_editor/annotations.py",
-      "sha256": "ee5489fe20412587d02ed6828585514f6d28757031c0112a8d1c5d33dfd78802",
-      "size": 11451
+      "sha256": "ca056c15492c0678161f39c37c2758b285e8234f09de75a5c27eb02c88d76f1a",
+      "size": 11608
     },
     {
       "path": "scripts/svg_editor/server.py",
-      "sha256": "0bb90c3e7cd3242d44d6074e52fa3fa70c922d06faecda330d5760d1739096cc",
-      "size": 52246
+      "sha256": "aa67270f451053e06970d348bed74dd1653b5c2b43de2a7bce4a7339b9ec6549",
+      "size": 62488
     },
     {
       "path": "scripts/svg_editor/static/app.js",
-      "sha256": "a4584a481f54da970a41063155c8c0e7311c8424db48eabc60d2a3a65f2b23a2",
-      "size": 145726
+      "sha256": "53a3b9d68cae859495e7705b521baa57b6aaa54439de2da935fb6ce616aeeadc",
+      "size": 151225
     },
     {
       "path": "scripts/svg_editor/static/index.html",
@@ -1973,8 +1973,8 @@
     },
     {
       "path": "scripts/svg_finalize/embed_icons.py",
-      "sha256": "ac7b2d57340c0437b9125a2fbb23244f2d1ec30a25b13a851655522f6578e19c",
-      "size": 22736
+      "sha256": "d6feccbdd8700eaa904d653341149ea05e0a9474664f8a9ec999c16df00024e7",
+      "size": 23064
     },
     {
       "path": "scripts/svg_finalize/embed_images.py",
@@ -2023,8 +2023,8 @@
     },
     {
       "path": "scripts/svg_quality/svg_contracts.py",
-      "sha256": "e02a9082afc5950cec5a57b4f20feac1785bbd4c1405e779878e4f675f3a1de3",
-      "size": 44352
+      "sha256": "e0924bed0d81ea256371daf981f04afd12f67df0e91dd3e6a74a89b1d94b037a",
+      "size": 44834
     },
     {
       "path": "scripts/svg_quality/xml_support.py",
@@ -2073,8 +2073,8 @@
     },
     {
       "path": "scripts/svg_to_pptx/drawingml/elements.py",
-      "sha256": "ae3d441b5faeade981b96fce990dfca2613a6d3709e0b5e3a2496371cf804765",
-      "size": 198489
+      "sha256": "d2b2f8a42023b8a174d76ebe1e2b0d386f25c05aebd792b420a80d1d50a49c21",
+      "size": 198573
     },
     {
       "path": "scripts/svg_to_pptx/drawingml/font_advances.json",
@@ -2313,8 +2313,8 @@
     },
     {
       "path": "scripts/template_import/manifest.py",
-      "sha256": "0714605787cb090a72cc87ec0b5275be724f4b9fdc71f6c3f35e2712ea3526d3",
-      "size": 30139
+      "sha256": "43067b5d5736fed3b1d37a166c708fc8a94db6c9c3f7683cce32f509e179ff87",
+      "size": 30204
     },
     {
       "path": "scripts/template_import/native_structure.py",
@@ -2383,8 +2383,8 @@
     },
     {
       "path": "scripts/tests/test_audit_r3_sources.py",
-      "sha256": "f599aea5f72ba28b448f22bf413f4fcfbb142b5b7a7cf856df883012e89cee6b",
-      "size": 28239
+      "sha256": "4b34f09c83ef1f23be961a9756d11fc3f7db6d8c7ee494f96504134c3fb3494d",
+      "size": 43622
     },
     {
       "path": "scripts/tests/test_audit_r3_typography.py",
@@ -2453,8 +2453,8 @@
     },
     {
       "path": "scripts/tests/test_edit_native_batch_a.py",
-      "sha256": "f413acda2cf5a9e13792c2c78c8bbb0da72367f2be5fcf1ea55839249d60f441",
-      "size": 20924
+      "sha256": "8535863c85531b9c88751bd8454a1f410963765a1b2cc9113ab81aa14ab27c9b",
+      "size": 21277
     },
     {
       "path": "scripts/tests/test_edit_native_batch_b.py",
@@ -2468,8 +2468,8 @@
     },
     {
       "path": "scripts/tests/test_embed_icons.py",
-      "sha256": "3cdeb2d94746a5c2fd55d06992ad7f3d6e67a4a1f4c240d739bb865ba0d95e3e",
-      "size": 6137
+      "sha256": "e1f844f69994e27f3b47a42c9ef4062544fbc849a3acd6f7ba53c3ea56d9f218",
+      "size": 7429
     },
     {
       "path": "scripts/tests/test_image_backend_tencent.py",
@@ -2477,9 +2477,14 @@
       "size": 15526
     },
     {
+      "path": "scripts/tests/test_image_gen_manifest.py",
+      "sha256": "dcd3e5a57a280deec575aeb13822c6155f3423b5779c339afb53eb4fae1df612",
+      "size": 2116
+    },
+    {
       "path": "scripts/tests/test_image_search.py",
-      "sha256": "26af6abb740f70c42f7c4ebf98965077e36c484388759105e274864f16194be4",
-      "size": 9113
+      "sha256": "614ace8432bf87be6cacbc5f6e25db16d23e27d2cc5439c37f0d281041f10385",
+      "size": 10994
     },
     {
       "path": "scripts/tests/test_local_server_security.py",
@@ -2510,6 +2515,11 @@
       "path": "scripts/tests/test_native_export_guards.py",
       "sha256": "78ff8fa3515a58713c352f6f6e0735b9392b119eaec0079d61a69e93bd963d5a",
       "size": 36243
+    },
+    {
+      "path": "scripts/tests/test_pdf_content_preservation.py",
+      "sha256": "6639c3fe78b4468912fcdadb16091ffdeeb50db5eb3757c7879d4064c7ab3a46",
+      "size": 5140
     },
     {
       "path": "scripts/tests/test_pdf_header_footer_position.py",
@@ -2548,18 +2558,18 @@
     },
     {
       "path": "scripts/tests/test_source_to_md_cli.py",
-      "sha256": "21dd8762001336e2ef6078c2bb8b0f6c23856ec9dfb3f15292a1270978856fd6",
-      "size": 20460
+      "sha256": "254313882b1db9af2f13c085edfd9e76f0308f9f45b219db36ad4972a2dd1dca",
+      "size": 23964
     },
     {
       "path": "scripts/tests/test_source_to_md_content_loss_docx.py",
-      "sha256": "0bd0b9509dacd1e840f9d754aa3cefcb0a69ae9cfa174e5a14fb28e96e28d958",
-      "size": 6354
+      "sha256": "e2c2691d64895e8b2cf4af01ce7bba0c97e20d94fcf62583240f87e4df7f8640",
+      "size": 13906
     },
     {
       "path": "scripts/tests/test_source_to_md_content_loss_excel.py",
-      "sha256": "e8ff86f7c1b0cea003a61373e501d227ac71ce09a92c7d4d70cf14a30e522007",
-      "size": 8081
+      "sha256": "c3ad4d71832e592b861c16c6ec11df0cca74a595964fc74b9410eaf58d202a5a",
+      "size": 10817
     },
     {
       "path": "scripts/tests/test_source_to_md_content_loss_pptx.py",
@@ -2568,8 +2578,8 @@
     },
     {
       "path": "scripts/tests/test_source_to_md_content_loss_web.py",
-      "sha256": "0e7b6df5bacc4d19041ea836b76abf535d7a16dd757f5ba9b9f6022fbd8ceaa8",
-      "size": 5409
+      "sha256": "077412ef739ef72ca595efa872a350fecd0463a4ff7375594f6d08c9b16ffb88",
+      "size": 7159
     },
     {
       "path": "scripts/tests/test_spec_lock_forbidden.py",
@@ -2583,13 +2593,13 @@
     },
     {
       "path": "scripts/tests/test_svg_editor_server.py",
-      "sha256": "fa724d6cc48e728a4add52936dadb69d3010753b5d83a56890da2e4211762211",
-      "size": 2391
+      "sha256": "e4f550d9e4af80bf79f2510fb255c5f5f52062778429c5d6e4e016b081c56fd0",
+      "size": 9581
     },
     {
       "path": "scripts/tests/test_svg_quality_checker.py",
-      "sha256": "5d3effa41967482f13f5020e4f746b707a57393e09ff63bd1bdba448894f5fbe",
-      "size": 21161
+      "sha256": "6641175feb7feabd17b9099939657ba16212b4e859fa82719812daa90133e6f7",
+      "size": 22178
     },
     {
       "path": "scripts/tests/test_template_flow_batch1.py",
@@ -2603,8 +2613,8 @@
     },
     {
       "path": "scripts/tests/test_template_flow_batch4.py",
-      "sha256": "6217892f31ff77789757a1c00a2579374c5561ef66eb2aa251055ea07f897afb",
-      "size": 12230
+      "sha256": "96bfc3f4a803cf87a9075f994298dfc3e3df3a6743e37f91f2252848bf0e298c",
+      "size": 12794
     },
     {
       "path": "scripts/tests/test_text_baseline.py",
@@ -2623,13 +2633,13 @@
     },
     {
       "path": "scripts/tests/test_text_measure.py",
-      "sha256": "f2e25291dadfb68e1b48061382f3dcba85fc209a06bcb72d3bb4d664d740d243",
-      "size": 19413
+      "sha256": "fae3d17fbba98cf23908ab649603d655bda8bc9adf374b881e669a37c5b62fa5",
+      "size": 20039
     },
     {
       "path": "scripts/tests/test_text_overflow_import.py",
-      "sha256": "c147334473c42a2a87845f38702ddcf11b72e5f57f504ed5ee671a1d0f9c5dbf",
-      "size": 9063
+      "sha256": "49c69fc528e70d2073f24b26052113245119b4e12cb78d8c530d649b527efa16",
+      "size": 9729
     },
     {
       "path": "scripts/tests/test_update_spec.py",
@@ -2638,8 +2648,8 @@
     },
     {
       "path": "scripts/tests/test_video_subtitles.py",
-      "sha256": "34507ca13b8b939c584728eea6284475d60e360b581a116f91a44a06b4bab0ff",
-      "size": 3524
+      "sha256": "ea29914013a39dded545b3d2d9d60ae61158390215a0d7e170f5fe01e46ab8a8",
+      "size": 4255
     },
     {
       "path": "scripts/tests/test_web_to_md_security.py",
@@ -2713,8 +2723,8 @@
     },
     {
       "path": "scripts/video_subtitles.py",
-      "sha256": "77400c0d73d05f0e5fa5271b5439e57ddd5504a8a3f4931751a055afad0495cb",
-      "size": 13578
+      "sha256": "602b3c22aa76da6191db0d4d538415d4348af1483a2c18bace1fc43044f1ed6c",
+      "size": 13630
     },
     {
       "path": "scripts/visual_review.py",
@@ -3278,7 +3288,7 @@
     },
     {
       "path": "templates/icons/icons.manifest.json",
-      "sha256": "b6d64e9c94014196e0c9565d74c203ae43c3e4eaf4fe930dc94ac54e757e950f",
+      "sha256": "8f9fe6f1ad5108514f64a6dec9c0de465344582dc9084cf633970884944d8e0b",
       "size": 4377063
     },
     {
@@ -4888,8 +4898,8 @@
     },
     {
       "path": "workflows/create-template.md",
-      "sha256": "216135743d4b6736639999d7ec6af370d4f43ac3f2399fa5ac9ab61e163365e3",
-      "size": 40996
+      "sha256": "12a3bd67aee503cbbed60120477f849dfcfe5494bb736b52efbcf97b03c82b66",
+      "size": 41038
     },
     {
       "path": "workflows/create-template/create-brand.md",
@@ -4918,8 +4928,8 @@
     },
     {
       "path": "workflows/generate-pptx.md",
-      "sha256": "172de2bd27960c1869ddf15763edfb7176be2043fca00e6532f5df99f1ca6d80",
-      "size": 46718
+      "sha256": "b9930076944b9737f7650f6faa24ca8d646ea50fa085e9440fefc951d376e449",
+      "size": 46927
     },
     {
       "path": "workflows/governance/failure-recovery.md",
@@ -4933,8 +4943,8 @@
     },
     {
       "path": "workflows/profiles/beautify-pptx.md",
-      "sha256": "4159f0ed7fe86d17a3a648cecfc5f551f08ab871f23a1c41ca180816a5200cfa",
-      "size": 20704
+      "sha256": "0d6d516d66037d1576bf9902624ef197639e2d5d4a14c99051d6907231b6313f",
+      "size": 20776
     },
     {
       "path": "workflows/profiles/image-to-pptx.md",
@@ -4963,13 +4973,13 @@
     },
     {
       "path": "workflows/stages/generate-audio.md",
-      "sha256": "fad7be23cd6f052ba8d54b88d3d008b1bb1b4e4c89c021804048ef72ad552430",
-      "size": 15026
+      "sha256": "3a1e1420519bf132df0e6afa8b8a044402373d55f99e6726272e460771954730",
+      "size": 15015
     },
     {
       "path": "workflows/stages/live-preview.md",
-      "sha256": "c6a0a4a7e57fd6aa30eaf0d7132e7c5f9d8ff4f49b38dd80a3aeb14ae41ca364",
-      "size": 3561
+      "sha256": "84e60fe3a4e3d6d3e4ceb6575f3601523a20a3d8ce96c06237653f3699e69bd9",
+      "size": 3556
     },
     {
       "path": "workflows/stages/refine-spec.md",
@@ -4978,8 +4988,8 @@
     },
     {
       "path": "workflows/stages/resume-execute.md",
-      "sha256": "2ce02fab5a63cc09857d5df35835371376c727e48bcdbd0391dbee9a99dbbd48",
-      "size": 6416
+      "sha256": "5d37fc0b4ba7859299150bb895018d727f98a2c15ea0d5a87150114d6458714a",
+      "size": 6433
     },
     {
       "path": "workflows/stages/topic-research.md",
@@ -5004,12 +5014,12 @@
   ],
   "schema_version": 1,
   "totals": {
-    "bytes": 44980184,
-    "files": 1000
+    "bytes": 45053150,
+    "files": 1002
   },
   "upstream": {
-    "commit": "b4efe3ddf237a97a42880164759162f8e2412f2f",
+    "commit": "b113d23720260c411ee47b2b05a73615f954deeb",
     "repository": "https://github.com/hugohe3/ppt-master",
-    "version": "6.7.0"
+    "version": "6.7.2"
   }
 }
